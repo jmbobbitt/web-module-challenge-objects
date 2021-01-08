@@ -17,15 +17,9 @@ The function should:
 */
 
 function createMenuItem(name, price, category){
-    let objectBuilt = 
-    {
-      name, 
-      price, 
-      category,
-    }; 
-    return objectBuilt;
-};
-
+    return {name, price, category}
+  }
+createMenuItem("taco", 8, "Lunch")
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 1b: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -36,9 +30,9 @@ Test your createMenuItems function by doing the following:
   
   For example: createMenuItem("pizza",5,"lunch") would return this as the object: {name:"Pizza",price:5,category:"lunch"}
 */
-log(createMenuItem('pizza',5,'lunch'));
-log(createMenuItem('spaghetti', 11, 'dinner'));
-log(createMenuItem('pasta', 10, 'dinner' ));
+log(createMenuItem("pizza",5,"lunch"));
+log(createMenuItem("spaghetti", 11, "dinner"));
+log(createMenuItem("pasta", 10, "dinner"));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 You're having a lunch special! 25% off for teachers and students, 10% off for everyone else. Add a method to the 
@@ -53,7 +47,7 @@ Using the burger object below do the following:
   For example: burger.discount("teacher") would return 13.5 and burger.discount("public") would return 16.2
 */
 
-// export 
+export 
 const burger = {
   name: "Burger", 
   price: 18, 
@@ -97,6 +91,7 @@ const reviews = [
 Using the reviews array above:
   1. log only Julius' feedback to the console
 */
+log(reviews[5].feedback)
 
 
 
@@ -107,7 +102,9 @@ Using the reviews array above do the following:
   2. log the whole array to the console, make sure the new review is inside of it   
 */
 
+reviews.push({name: "Jenni", rating:3, feedback: "Merry Meet everyone."});
 
+log(reviews);
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Reyna's feedback is missing! Use what you know to do the following:
@@ -115,6 +112,7 @@ Reyna's feedback is missing! Use what you know to do the following:
   2. log the reviews array to the console to check your work
 */
 
+log(reviews[7].feedback = "this place is chilll with really cool people, great for getting work done on weekdays")
 
 
 
@@ -129,10 +127,10 @@ Use the getReviewByIndex function below to do the following:
 */
 
 
-function getReviewByIndex(/*Your code here*/) {
-  /*Your code here*/
+function getReviewByIndex(array, index) {
+  return `${reviews[index].name} gave the restaurant a ${reviews[index].rating} star review, and their feedback was: ${reviews[index].feedback}`
 }
-
+log(getReviewByIndex(reviews, 0));
 
   
 
@@ -147,9 +145,12 @@ Use the getLastReview function below to do the following:
 */
 
 
-function getLastReview(/*Your code here*/) {
-  /*Your code here*/
-} 
+function getLastReview(reviews) 
+  /*Your code here*/	{
+  return `${reviews[reviews.length -1].name} gave the restaurant a ${reviews[reviews.length -1].rating} star review, and their feedback was: ${reviews[reviews.length -1].feedback}`
+} 	
+
+log(getLastReview(reviews));
 
 
 
@@ -216,15 +217,15 @@ function carMaker(/* code here */) {
 }
 
 
-// /* 🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑 */
-// function foo(){
-//   console.log('its working');
-//   return 'bar';
-// }
+/* 🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑 */
+function foo(){
+  console.log('its working');
+  return 'bar';
+}
 
-// export default{
-//   foo,
-//   createMenuItem,
-//   getReviewByIndex,
-//   getLastReview,
-// }
+export default{
+  foo,
+  createMenuItem,
+  getReviewByIndex,
+  getLastReview,
+}
